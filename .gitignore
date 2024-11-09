@@ -16,6 +16,11 @@ media/
 
 # Environment variables
 .env
+.env.local
+.env.*.local
+
+# Static files (usually collected to different directory)
+/staticfiles/
 
 # IDE
 .idea/
