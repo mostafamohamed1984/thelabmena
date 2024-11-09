@@ -7,19 +7,78 @@
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="description" content="A well made and handcrafted Bootstrap 5 template">
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
-  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/favicon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/TheLabMenaLogo2.svg' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/TheLabMenaLogo2.svg' %}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/TheLabMenaLogo2.svg' %}">
   <title>System</title>
   <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
 
+  <!-- Add these in the head section -->
+  <meta name="title" content="Subscribe to TheLab MENA Newsletter - Marketing Insights">
+  <meta name="description" content="Stay updated with the latest marketing trends, industry insights, and strategic tips from TheLab MENA. Subscribe to our newsletter for exclusive content and updates.">
+  <meta name="keywords" content="marketing newsletter, MENA marketing insights, digital marketing updates, marketing trends, industry news">
+  <meta name="author" content="TheLab MENA">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
 
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thelabmena.com/system/">
+  <meta property="og:title" content="Subscribe to TheLab MENA Newsletter - Marketing Insights">
+  <meta property="og:description" content="Stay updated with the latest marketing trends, industry insights, and strategic tips from TheLab MENA. Subscribe to our newsletter for exclusive content and updates.">
+  <meta property="og:image" content="{% static 'img/TheLabMenaLogo2.svg' %}">
+<!-- Preconnect hints -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+
+<!-- Manifest link -->
+<link rel="manifest" href="{% static 'manifest.json' %}">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://thelabmena.com/system/">
+  <meta name="twitter:title" content="Subscribe to TheLab MENA Newsletter - Marketing Insights">
+  <meta name="twitter:description" content="Stay updated with the latest marketing trends, industry insights, and strategic tips from TheLab MENA. Subscribe to our newsletter for exclusive content and updates.">
+  <meta name="twitter:image" content="{% static 'img/TheLabMenaLogo2.svg' %}">
+<!-- Add right after your meta tags -->
+<link rel="preload" href="{% static 'css/theme.min.css' %}" as="style">
+<link rel="preload" href="{% static 'js/bootstrap.bundle.min.js' %}" as="script">
+<link rel="preload" href="{% static 'fonts/inter-v12-latin-regular.woff2' %}" as="font" type="font/woff2" crossorigin>
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://thelabmena.com/system/">
+<!-- Add right before closing </head> tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-XXXXX-Y');
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://thelabmena.com"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Newsletter",
+      "item": "https://thelabmena.com/system/"
+    }]
+  }
+  </script>
   </head>
 
   <body class="d-flex h-100 w-100 bg-black text-white" data-bs-spy="scroll" data-bs-target="#navScroll">
-
+    <noscript>
+      <div class="alert alert-warning">
+          Please enable JavaScript for the best experience on our website.
+      </div>
+  </noscript>
     <div class="h-100 container-fluid">
       <div class="h-100 row d-flex align-items-stretch">
         

@@ -35,3 +35,6 @@ vine==5.1.0
 wcwidth==0.2.13
 python-dotenv==1.0.0
 ngrok==0.12.0
+django-robots==5.0
+django-meta==2.1.0
+django-htmlmin==0.11.0

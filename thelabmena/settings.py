@@ -1,16 +1,19 @@
 import os
+from dotenv import load_dotenv
 from pathlib import Path
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'your-secret-key'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # Set back to True for testing
+DEBUG = False  # Set back to True for testing
 
-ALLOWED_HOSTS = ['thelabmena.com', 'www.thelabmena.com', 'localhost', '127.0.0.1', '199b-154-182-211-227.ngrok-free.app', '.ngrok-free.app']
+ALLOWED_HOSTS = ['thelabmena.com', 'www.thelabmena.com', "92.205.21.118"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -20,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'core',
 ]
 
@@ -79,8 +83,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Celery Configuration
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERY_BEAT_SCHEDULE = {
     'check-social-media-updates': {
         'task': 'core.tasks.check_social_media_updates',
@@ -90,22 +92,28 @@ CELERY_BEAT_SCHEDULE = {
 
 # Email Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # Or your email provider
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your-email@gmail.com'
-EMAIL_HOST_PASSWORD = 'your-app-password'
-DEFAULT_FROM_EMAIL = 'TheLab MENA <your-email@gmail.com>'
 
 # Social Media API Settings
-FACEBOOK_ACCESS_TOKEN = 'your-facebook-access-token'
-INSTAGRAM_USERNAME = 'thelab.mena'
-INSTAGRAM_PASSWORD = 'your-instagram-password'
-INSTAGRAM_USER_ID = 'your-instagram-user-id'
-
 # Email Settings for Newsletter
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'ali@thelabmena.com'
-EMAIL_HOST_PASSWORD = 'your-app-specific-password'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+# Update STATICFILES_FINDERS to remove compressor
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+# Add security settings
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+
+# Add security headers
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+SECURE_CONTENT_TYPE_NOSNIFF = True
+CSP_DEFAULT_SRC = ("'self'",)

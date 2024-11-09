@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import NewsletterSubscriber
+from django.http import HttpResponse
+from django.views.decorators.http import require_GET
+from django.contrib.sitemaps import Sitemap
+from django.urls import reverse
 
 def index(request):
     return render(request, 'core/index.html')
@@ -27,3 +31,24 @@ def about(request):
 
 def contact(request):
     return render(request, 'core/contact.html')
+
+class StaticViewSitemap(Sitemap):
+    priority = 0.5
+    changefreq = 'daily'
+
+    def items(self):
+        return ['core:index', 'core:content', 'core:system']
+
+    def location(self, item):
+        return reverse(item)
+
+@require_GET
+def robots_txt(request):
+    lines = [
+        "User-agent: *",
+        "Disallow: /admin/",
+        "Disallow: /private/",
+        "Allow: /",
+        "Sitemap: https://thelabmena.com/sitemap.xml"
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")

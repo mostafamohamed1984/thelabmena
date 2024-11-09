@@ -55,48 +55,4 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: auto;
-}
-
-#loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff; /* or your preferred background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.loading-logo {
-    width: 150px; /* adjust size as needed */
-    height: auto;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.content {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.content.loaded {
-    opacity: 1;
-}
+} 

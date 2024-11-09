@@ -5,15 +5,73 @@
 
   <head>
       <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <meta name="description" content="THELAB MENA">
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
-  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/favicon.png' %}">
-  <title>THELAB MENA</title>
-  <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+      <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+      
+      <!-- Primary Meta Tags -->
+      <meta name="title" content="TheLab MENA - Leading Digital Marketing Agency in Middle East">
+      <meta name="description" content="Transform your brand with TheLab MENA, the premier marketing agency in the Middle East. Offering innovative digital solutions, creative excellence, and strategic marketing services.">
+      <meta name="keywords" content="TheLab MENA, digital marketing, brand strategy, creative agency, MENA marketing, Middle East advertising, marketing solutions, Beirut marketing">
+      <meta name="author" content="TheLab MENA">
+      <meta name="robots" content="index, follow">
+      <meta name="language" content="English">
+
+      <!-- Open Graph / Facebook -->
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://thelabmena.com/">
+      <meta property="og:title" content="TheLab MENA - Leading Digital Marketing Agency in Middle East">
+      <meta property="og:description" content="Transform your brand with TheLab MENA, the premier marketing agency in the Middle East. Offering innovative digital solutions, creative excellence, and strategic marketing services.">
+      <meta property="og:image" content="{% static 'img/TheLabMenaLogo2.svg' %}">
+
+      <!-- Twitter -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:url" content="https://thelabmena.com/">
+      <meta name="twitter:title" content="TheLab MENA - Leading Digital Marketing Agency in Middle East">
+      <meta name="twitter:description" content="Transform your brand with TheLab MENA, the premier marketing agency in the Middle East. Offering innovative digital solutions, creative excellence, and strategic marketing services.">
+      <meta name="twitter:image" content="{% static 'img/TheLabMenaLogo2.svg' %}">
+
+      <!-- Canonical URL -->
+      <link rel="canonical" href="https://thelabmena.com/">
+      
+      <!-- Your existing favicon and CSS links -->
+      <title>THELAB MENA - Leading Digital Marketing Agency in Middle East</title>
+      <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/TheLabMenaLogo2.svg' %}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/TheLabMenaLogo2.svg' %}">
+      <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/TheLabMenaLogo2.svg' %}">
+      <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+<!-- Preconnect hints -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+
+<!-- Manifest link -->
+<link rel="manifest" href="{% static 'manifest.json' %}">
+      <!-- Schema.org markup for Google -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TheLab MENA",
+        "url": "https://thelabmena.com",
+        "logo": "{% static 'img/TheLabMenaLogo2.svg' %}",
+        "description": "Premier digital marketing agency in the Middle East, specializing in creative excellence and innovative brand solutions.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Lebanon",
+          "addressLocality": "Beirut"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+961-3-017709",
+          "contactType": "customer service",
+          "email": "ali@thelabmena.com"
+        },
+        "sameAs": [
+          "https://facebook.com/profile.php?id=61564050178957",
+          "https://instagram.com/thelab.mena/",
+          "https://linkedin.com/company/the-lab-mena"
+        ]
+      }
+      </script>
 
   <style>
     /* inter-300 - latin */
@@ -57,12 +115,72 @@
            url("{% static 'fonts/inter-v12-latin-700.woff2' %}") format('woff2'),
            url("{% static 'fonts/inter-v12-latin-700.woff' %}") format('woff');
     }
+
+    #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s;
+    }
+
+    #loading-screen img {
+        width: 200px;
+        height: auto;
+        animation: simpleScale 2s infinite;
+    }
+
+    @keyframes simpleScale {
+        0% {
+            transform: scale(0.8);
+            opacity: 0.5;
+        }
+        50% {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(0.8);
+            opacity: 0.5;
+        }
+    }
+
+    #main-content {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    #main-content.visible {
+        opacity: 1;
+    }
   </style>
+<!-- Add right before closing </head> tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-XXXXX-Y');
+</script>
 
   </head>
 
   <body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
 <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img src="{% static 'img/TheLabMenaLogo2.svg' %}" alt="The Lab Mena">
+    </div>
+    <noscript>
+      <div class="alert alert-warning">
+          Please enable JavaScript for the best experience on our website.
+      </div>
+  </noscript>
     <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
       <div class="container">
         <a class="navbar-brand pe-md-4 fs-4 col-md-auto text-center" href="{% url 'core:index' %}">
@@ -83,7 +201,7 @@
       </div>
     </nav>
 
-    <main>
+    <div id="main-content">
       <div class="w-100 overflow-hidden position-relative bg-black text-white" data-aos="fade">
   <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
   <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
@@ -401,9 +519,22 @@ AOS.init({
 
     if (scrollpos >= header_height) { add_class_on_scroll() }
     else { remove_class_on_scroll() }
-
-    console.log(scrollpos)
   })
+</script>
+<script>
+    window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        const content = document.getElementById('main-content');
+        
+        setTimeout(() => {
+            loadingScreen.style.opacity = '0';
+            content.classList.add('visible');
+            
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }, 1000);
+    });
 </script>
 </body>
 </html>
