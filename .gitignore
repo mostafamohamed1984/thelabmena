@@ -19,8 +19,9 @@ media/
 .env.local
 .env.*.local
 
-# Static files (usually collected to different directory)
+# Static files
 /staticfiles/
+*.map
 
 # IDE
 .idea/
@@ -30,4 +31,7 @@ media/
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Duplicate settings
+your_project/
