@@ -6,7 +6,7 @@
 
   <head>
       <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="title" content="Our Services - TheLab MENA Digital Marketing Agency">
   <meta name="description" content="Discover TheLab MENA's comprehensive marketing services including creative excellence, client-centric solutions, innovative strategies, and regional expertise in the Middle East.">
   <meta name="keywords" content="marketing services, creative excellence, client-centric marketing, MENA region expertise, digital solutions, brand strategy">
@@ -134,6 +134,184 @@
   line-height: 1.6;
 }
 
+/* Basic responsive design rules */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive container */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  
+  /* Adjust font sizes for mobile */
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  p { font-size: 1rem; }
+  
+  /* Stack elements vertically on mobile */
+  .row {
+    flex-direction: column;
+  }
+  
+  /* Make columns full width on mobile */
+  [class*="col-"] {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  /* Adjust specific content layouts for mobile */
+  .mobile-stack {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mobile-hide {
+    display: none;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 10px !important;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .px-vw-5 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* Fix card layouts */
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .circular-header {
+    min-height: 80px;
+  }
+
+  /* Adjust spacing */
+  .py-vh-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Center navigation */
+  .navbar-nav {
+    margin-right: 0 !important;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-item {
+    padding: 0 10px !important;
+  }
+}
+
+.content-hover-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.content-hover {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  border-radius: 15px;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+  border: 1px solid #333;
+  margin-top: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.content-hover p {
+  white-space: normal;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.content-hover-card:hover .content-hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .content-hover {
+    position: static;
+    transform: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 10px;
+    display: none;
+  }
+  
+  .content-hover-card:hover .content-hover {
+    display: block;
+  }
+}
+
 </style>
 <!-- Add right before closing </head> tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
@@ -218,51 +396,51 @@
     </div>
     </div>
         <div class="col-12 col-lg-10 col-xl-8">
-      <div class="row row-cols-1 row-cols-md-4 g-4 py-5" data-aos="fade-up">
+      <div class="row d-flex justify-content-between g-4 py-5" data-aos="fade-up">
         <!-- Card 1 -->
-        <div class="col">
-          <div class="card bg-transparent border-0">
-            <div class="card-header circular-header" onclick="toggleContent('content1')">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card bg-transparent border-0 content-hover-card">
+            <div class="card-header circular-header">
               <h2 class="h5 text-center mb-0">Creative Excellence</h2>
             </div>
-            <div class="card-body collapse" id="content1">
-              <p class="text-secondary small">Our team is driven by a relentless passion for creativity and a steadfast commitment to delivering work that consistently exceeds expectations.</p>
+            <div class="content-hover">
+              <p class="text-white fs-6 mt-4">Our team is driven by a relentless passion for creativity and a steadfast commitment to delivering work that consistently exceeds expectations.</p>
             </div>
           </div>
         </div>
         
         <!-- Card 2 -->
-        <div class="col">
-          <div class="card bg-transparent border-0">
-            <div class="card-header circular-header" onclick="toggleContent('content2')">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card bg-transparent border-0 content-hover-card">
+            <div class="card-header circular-header">
               <h2 class="h5 text-center mb-0">Client-Centric Focus</h2>
             </div>
-            <div class="card-body collapse" id="content2">
-              <p class="text-secondary small">We put our clients at the very heart of everything we do, developing tailored solutions that seamlessly align with your vision.</p>
+            <div class="content-hover">
+              <p class="text-white fs-6 mt-4">We put our clients at the very heart of everything we do, developing tailored solutions that seamlessly align with your vision.</p>
             </div>
           </div>
         </div>
         
         <!-- Card 3 -->
-        <div class="col">
-          <div class="card bg-transparent border-0">
-            <div class="card-header circular-header" onclick="toggleContent('content3')">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card bg-transparent border-0 content-hover-card">
+            <div class="card-header circular-header">
               <h2 class="h5 text-center mb-0">Innovative Spirit</h2>
             </div>
-            <div class="card-body collapse" id="content3">
-              <p class="text-secondary small">In an ever-evolving marketing landscape, we constantly explore new tools, technologies, and trends to keep you ahead.</p>
+            <div class="content-hover">
+              <p class="text-white fs-6 mt-4">In an ever-evolving marketing landscape, we constantly explore new tools, technologies, and trends to keep you ahead.</p>
             </div>
           </div>
         </div>
         
         <!-- Card 4 -->
-        <div class="col">
-          <div class="card bg-transparent border-0">
-            <div class="card-header circular-header" onclick="toggleContent('content4')">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card bg-transparent border-0 content-hover-card">
+            <div class="card-header circular-header">
               <h2 class="h5 text-center mb-0">Regional Expertise</h2>
             </div>
-            <div class="card-body collapse" id="content4">
-              <p class="text-secondary small">As a Beirut-based agency, we possess unparalleled insights into the unique dynamics of the MENA region.</p>
+            <div class="content-hover">
+              <p class="text-white fs-6 mt-4">As a Beirut-based agency, we possess unparalleled insights into the unique dynamics of the MENA region.</p>
             </div>
           </div>
         </div>
@@ -357,22 +535,6 @@ AOS.init({
     if (scrollpos >= header_height) { add_class_on_scroll() }
     else { remove_class_on_scroll() }
   })
-</script>
-<script>
-  function toggleContent(id) {
-    const content = document.getElementById(id);
-    const allContents = document.querySelectorAll('.card-body');
-    
-    // Close all other open contents
-    allContents.forEach(item => {
-      if (item.id !== id && item.classList.contains('show')) {
-        item.classList.remove('show');
-      }
-    });
-    
-    // Toggle the clicked content
-    content.classList.toggle('show');
-  }
 </script>
 
   </body>

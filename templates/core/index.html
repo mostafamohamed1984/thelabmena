@@ -4,9 +4,20 @@
 <html class="h-100" lang="en">
 
   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="description" content="Leading Digital Marketing Agency in Kuwait & Lebanon. Expert services in SEO, Social Media Marketing, PPC & Content Marketing. Transform your business with data-driven digital strategies.">
+      <meta name="keywords" content="digital marketing Kuwait, digital marketing Lebanon, SEO Kuwait, digital agency Kuwait, marketing agency Lebanon, social media marketing Kuwait, digital transformation Lebanon">
+      <title>The Lab MENA | Premier Digital Marketing Agency in Kuwait & Lebanon</title>
       
+      <!-- Open Graph tags for social sharing -->
+      <meta property="og:title" content="The Lab MENA | Digital Marketing Experts in Kuwait & Lebanon">
+      <meta property="og:description" content="Transform your business with Kuwait & Lebanon's leading digital marketing agency. Expert services in SEO, Social Media & Digital Strategy.">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:locale:alternate" content="ar_KW">
+      <meta property="og:locale:alternate" content="ar_LB">
+
       <!-- Primary Meta Tags -->
       <meta name="title" content="TheLab MENA - Leading Digital Marketing Agency in Middle East">
       <meta name="description" content="Transform your brand with TheLab MENA, the premier marketing agency in the Middle East. Offering innovative digital solutions, creative excellence, and strategic marketing services.">
@@ -70,6 +81,78 @@
           "https://instagram.com/thelab.mena/",
           "https://linkedin.com/company/the-lab-mena"
         ]
+      }
+      </script>
+
+      <!-- Add this script before closing </head> tag -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MarketingAgency",
+        "name": "TheLab MENA",
+        "image": "{% static 'img/TheLabMenaLogo2.svg' %}",
+        "url": "https://thelabmena.com",
+        "@id": "https://thelabmena.com",
+        "description": "Premier digital marketing agency in Kuwait, Lebanon & MENA region, specializing in SEO, social media marketing, and digital transformation",
+        "address": [{
+          "@type": "PostalAddress",
+          "addressCountry": "Kuwait",
+          "addressRegion": "Kuwait City"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressCountry": "Lebanon",
+          "addressRegion": "Beirut"
+        }],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "29.3759",
+          "longitude": "47.9774"
+        },
+        "areaServed": ["Kuwait", "Lebanon", "Middle East", "MENA Region"],
+        "priceRange": "$$",
+        "telephone": ["+965-55122568", "+961-3-017709"],
+        "email": "ali@thelabmena.com",
+        "sameAs": [
+          "https://facebook.com/profile.php?id=61564050178957",
+          "https://instagram.com/thelab.mena/",
+          "https://linkedin.com/company/the-lab-mena"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "150"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Digital Marketing Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SEO Services",
+                "description": "Professional SEO services in Kuwait and Lebanon"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Social Media Marketing",
+                "description": "Strategic social media management and marketing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Web Development",
+                "description": "Custom website development and design services"
+              }
+            }
+          ]
+        }
       }
       </script>
 
@@ -158,6 +241,74 @@
 
     #main-content.visible {
         opacity: 1;
+    }
+
+    /* Mobile responsiveness fixes */
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+
+      .navbar .container {
+        padding: 0 15px;
+      }
+
+      .navbar-nav {
+        margin-right: 0 !important;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .nav-item {
+        padding: 0 10px !important;
+      }
+
+      .px-vw-5 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .col-12 {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      /* Fix for social media icons alignment */
+      .d-flex {
+        justify-content: center;
+      }
+
+      /* Center align text on mobile */
+      .text-lg-start {
+        text-align: center !important;
+      }
+
+      /* Adjust image sizes */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
     }
   </style>
 <!-- Add right before closing </head> tag -->
@@ -377,11 +528,11 @@
 <div class="bg-black">
 <div class="container px-vw-5 py-vh-5">
   <div class="row d-flex align-items-center">
-    <div class="col-12 col-lg-5 text-center text-lg-end" data-aos="zoom-in-right">
+    <div class="col-12 col-lg-5 text-center text-lg-end" data-aos="zoom-in-right" data-aos-anchor-placement="top-bottom" data-aos-offset="-500">
       <span class="h5 text-secondary fw-lighter">Why Choose Us?</span>
       <h2 class="display-4">You get all our knowledge for one simple price</h2>
     </div>
-    <div class="col-12 col-lg-7 bg-dark rounded-5 py-vh-3 text-center my-5" data-aos="zoom-in-up">
+    <div class="col-12 col-lg-7 bg-dark rounded-5 py-vh-3 text-center my-5" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-offset="-500">
       <h2 class="display-huge mb-5">
         <span class="fs-4 me-2 fw-light">The Answer is simple!</span>
       <p class="lead text-secondary">We have had the privilege of working with a
@@ -398,44 +549,41 @@
 </div>
 
 </div>
-<div class="container-fluid px-vw-5 position-relative" data-aos="fade">
-<div class="position-absolute w-100 h-50 bg-black top-0 start-0"></div>
-<div class="position-relative py-vh-5 bg-cover bg-center rounded-5" style="background-image: url('{% static "img/webp/abstract12.webp" %}')">
-  <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
-  <div class="row d-flex align-items-center">
+<div class="container-fluid px-vw-5 position-relative" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-offset="-500">
+  <div class="position-absolute w-100 h-50 bg-black top-0 start-0"></div>
+  <div class="position-relative py-vh-5 bg-cover bg-center rounded-5" style="background-image: url('{% static "img/webp/abstract12.webp" %}')">
+    <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
+      <div class="row d-flex align-items-center">
+        <div class="col-6 d-flex align-items-center bg-dark shadow rounded-5 p-0" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-offset="0">
+          <div class="row d-flex justify-content-center">
+            <div class="col-12">
+          <img src="{% static 'img/Untitled-5psd copy.jpg' %}" width="684" height="457" alt="our CEO with some nice numbers" class="img-fluid rounded-5" loading="lazy">
+        </div>
+        <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
+          <p class="lead border-bottom pb-4 border-secondary">"Elevate your brand, amplify your impact." <br>
+            This phrase conveys the agency's focus on elevating their clients' brands and amplifying their reach and influence. It's an aspirational statement that could resonate with investors looking to partner with a dynamic, growth-oriented marketing firm, as well as potential employees who want to be part of a company driving big results.</p>
+          <p class="text-secondary text-center">THELAB MENA Company Owner</p>
+      </div>
+    </div>
+    </div>
+    <div class="col-5 offset-1">
+      <span class="h5 text-secondary fw-lighter">More than</span>
+      <h2 class="display-huge fw-bolder" data-aos="zoom-in-left" data-aos-anchor-placement="top-bottom" data-aos-offset="-500">400</h2>
+      <p class="h4 fw-lighter text-secondary">
+        brands in sectors such as technology, fashion,
+        hospitality, and more.
+      </p>
 
-  <div class="col-6 d-flex align-items-center bg-dark shadow rounded-5 p-0" data-aos="zoom-in-up">
-    <div class="row d-flex justify-content-center">
-      <div class="col-12">
-    <img src="{% static 'img/Untitled-5psd copy.jpg' %}" width="684" height="457" alt="our CEO with some nice numbers" class="img-fluid rounded-5" loading="lazy">
+      <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left" data-aos-anchor-placement="top-bottom" data-aos-offset="-500">35,620</h2>
+      <p class="h4 fw-lighter text-secondary">
+        Customers have been suggesting us to their friends over the years.
+      </p>
+      <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left" data-aos-anchor-placement="top-bottom" data-aos-offset="-500">98%</h2>
+      <p class="h4 fw-lighter text-secondary">
+        Of the people we have worked with have been satisfied.
+      </p>
+    </div>
   </div>
-  <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
-    <p class="lead border-bottom pb-4 border-secondary">"Elevate your brand, amplify your impact." <br>
-      This phrase conveys the agency's focus on elevating their clients' brands and amplifying their reach and influence. It's an aspirational statement that could resonate with investors looking to partner with a dynamic, growth-oriented marketing firm, as well as potential employees who want to be part of a company driving big results.</p>
-    <p class="text-secondary text-center">THELAB MENA Company Owner</p>
-</div>
-</div>
-</div>
-  <div class="col-5 offset-1">
-    <span class="h5 text-secondary fw-lighter">More than</span>
-    <h2 class="display-huge fw-bolder" data-aos="zoom-in-left">400</h2>
-<p class="h4 fw-lighter text-secondary">
-  brands in sectors such as technology, fashion,
-  hospitality, and more.
-</p>
-
-<h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">35,620</h2>
-<p class="h4 fw-lighter text-secondary">
-Customers have been suggesting us to their friends over the years.
-</p>
-<h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">98%</h2>
-<p class="h4 fw-lighter text-secondary">
-Of the people we have worked with have been satisfied.
-</p>
-</div>
-  </div>
-</div>
-
 </div>
 </div>
 
@@ -503,7 +651,13 @@ Of the people we have worked with have been satisfied.
 <script src="{% static 'js/aos.js' %}"></script>
 <script>
 AOS.init({
- duration: 800, // values from 0 to 3000, with step 50ms
+  duration: 800,
+  offset: -200,
+  once: true,
+  easing: 'ease-out',
+  anchorPlacement: 'center-bottom',
+  threshold: 0,
+  delay: 0
 });
 </script>
 <script>

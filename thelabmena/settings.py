@@ -11,9 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # Set back to True for testing
+DEBUG = True  # Set back to True for testing
 
-ALLOWED_HOSTS = ['thelabmena.com', 'www.thelabmena.com', "92.205.21.118"]
+ALLOWED_HOSTS = ['thelabmena.com', 'www.thelabmena.com', "92.205.21.118", "127.0.0.1"]
 
 # Application definition
 INSTALLED_APPS = [
